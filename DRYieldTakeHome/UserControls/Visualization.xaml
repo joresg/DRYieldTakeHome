@@ -42,7 +42,7 @@
                     <GridViewColumn Header="LSL" Width="60" DisplayMemberBinding="{Binding LO_SPEC}" />
                     <GridViewColumn Header="USL" Width="60" DisplayMemberBinding="{Binding HI_SPEC}" />
                     <GridViewColumn Header="MEAN" Width="100" DisplayMemberBinding="{Binding MEAN}" />
-                    <GridViewColumn Header="STANDARD DEVIATION" Width="150" DisplayMemberBinding="{Binding STD_DEV}" />
+                    <GridViewColumn Header="STANDARD DEVIATION" Width="200" DisplayMemberBinding="{Binding STD_DEV}" />
                 </GridView>
             </ListView.View>
         </ListView>

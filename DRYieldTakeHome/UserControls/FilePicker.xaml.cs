@@ -38,7 +38,6 @@ namespace DRYieldTakeHome.UserControls
             {
                 if (e.Data.GetDataPresent(DataFormats.FileDrop))
                 {
-                    // Note that you can have more than one file.
                     string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                     //MessageBox.Show(files[0]);
                     FilePath = files[0];
@@ -49,8 +48,6 @@ namespace DRYieldTakeHome.UserControls
                         var parentViewModel = (MainWindowViewModel)viewModel.ParentModel;
                         if (parentViewModel != null)
                         {
-                            //if (parentViewModel.LoadSettingsPageCommand.CanExecute(null))
-                            //    parentViewModel.LoadSettingsPageCommand.Execute(Helpers.Helpers.createDataForVis(1, FilePath));
                             viewModel.FilePath = FilePath;
                             parentViewModel.fpViewModel = viewModel;
                             parentViewModel.SelectedBtnIndex = 1;
@@ -78,12 +75,6 @@ namespace DRYieldTakeHome.UserControls
                     var parentViewModel = (MainWindowViewModel)viewModel.ParentModel;
                     if (parentViewModel != null)
                     {
-                        /*
-                        if (parentViewModel.LoadSettingsPageCommand.CanExecute(null))
-                        {
-                            parentViewModel.LoadSettingsPageCommand.Execute(Helpers.Helpers.createDataForVis(1, FilePath));
-                        }
-                        */
                         viewModel.FilePath = FilePath;
                         parentViewModel.fpViewModel = viewModel;
                         parentViewModel.SelectedBtnIndex = 1;

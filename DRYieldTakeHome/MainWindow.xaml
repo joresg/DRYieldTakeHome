@@ -19,8 +19,8 @@
     </Window.Resources>
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
-            <Button Content="Home Page" Command="{Binding Path=LoadHomePageCommand}" />
-            <Button Content="Settings Page" Command="{Binding Path=LoadSettingsPageCommand}"/>
+            <Button Content="Home Page" Command="{Binding Path=LoadUploadPageCommand}" />
+            <Button Content="Settings Page" Command="{Binding Path=LoadVisualizationPageCommand}"/>
         </StackPanel>
 
         <ContentControl Content="{Binding Path=CurrentViewModel}"></ContentControl>

@@ -16,14 +16,14 @@ namespace DRYieldTakeHome.VM
      
         public MainWindowViewModel()
         {
-            //this.LoadHomePage(null);
-            this.LoadHomePageCommand = new DelegateCommand(o => this.LoadHomePage(o));
-            this.LoadSettingsPageCommand = new DelegateCommand(o => this.LoadVisualizationpage(o));
+            //this.LoadUploadPage(null);
+            this.LoadUploadPageCommand = new DelegateCommand(o => this.LoadUploadPage(o));
+            this.LoadVisualizationPageCommand = new DelegateCommand(o => this.LoadVisualizationpage(o));
             this.SelectedBtnIndex = 0;
         }
         
-        public ICommand LoadHomePageCommand { get; private set; }
-        public ICommand LoadSettingsPageCommand { get; private set; }
+        public ICommand LoadUploadPageCommand { get; private set; }
+        public ICommand LoadVisualizationPageCommand { get; private set; }
 
         private ViewModelBase _currentViewModel;
 
@@ -53,7 +53,7 @@ namespace DRYieldTakeHome.VM
         public FilePickerViewModel fpViewModel { get; set; }
         public VisualizationViewModel visViewModel { get; set; }
 
-        private void LoadHomePage(object btn_index)
+        private void LoadUploadPage(object btn_index)
         {
             CurrentViewModel = new FilePickerViewModel(new Model.FilePicker(), this);
             if(btn_index != null)

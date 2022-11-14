@@ -16,7 +16,6 @@ namespace DRYieldTakeHome.VM
             this.Model = model;
             this.FilePath = fp;
             IsWarning = fp.IsNullOrEmpty();
-            //VisualizationBL.Deserialize(FilePath);
         }
         public Visualization Model { get; private set; }
         public MainWindowViewModel ParentModel { get; private set; }

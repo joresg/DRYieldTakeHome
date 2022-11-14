@@ -38,16 +38,16 @@ namespace DRYieldTakeHome
                 switch (selected?.Page)
                 {
                     case "file_picker":
-                        if (vm.LoadHomePageCommand.CanExecute(null))
+                        if (vm.LoadUploadPageCommand.CanExecute(null))
                         {
-                            vm.LoadHomePageCommand.Execute(null);
+                            vm.LoadUploadPageCommand.Execute(null);
                             this.Title = $"{this.Title.Split(':')[0]}: File Picker";
                         }
                     break;
                     case "visualization":
-                        if (vm.LoadSettingsPageCommand.CanExecute(null))
+                        if (vm.LoadVisualizationPageCommand.CanExecute(null))
                         {
-                            vm.LoadSettingsPageCommand.Execute(Helpers.Helpers.createDataForVis(1, ""));
+                            vm.LoadVisualizationPageCommand.Execute(Helpers.Helpers.createDataForVis(1, ""));
                             this.Title = $"{this.Title.Split(':')[0]}: Visualization";
                         }
                         break;

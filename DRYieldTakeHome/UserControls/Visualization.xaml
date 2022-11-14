@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="DRYieldTakeHome.UserControls.Visualization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DRYieldTakeHome.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#404252">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Path=VisText}" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <ListView ItemsSource="{Binding MIRList}" Grid.Row="1" Name="MIRData" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Lot ID" Width="50" DisplayMemberBinding="{Binding LOT_ID}" />
+                    <GridViewColumn Header="Part type" Width="60" DisplayMemberBinding="{Binding PART_TYP}" />
+                    <GridViewColumn Header="Job name" Width="60" DisplayMemberBinding="{Binding JOB_NAM}" />
+                    <GridViewColumn Header="Node ID" Width="60" DisplayMemberBinding="{Binding NODE_NAM}" />
+                    <GridViewColumn Header="Tester Type" Width="70" DisplayMemberBinding="{Binding TSTR_TYP}" />
+                    <GridViewColumn Header="Setup time" Width="120" DisplayMemberBinding="{Binding SETUP_TYP}" />
+                    <GridViewColumn Header="Start Time" Width="120" DisplayMemberBinding="{Binding START_T}" />
+                    <GridViewColumn Header="Operator Name" Width="100" DisplayMemberBinding="{Binding OPER_NAM}" />
+                    <GridViewColumn Header="Test Mode" Width="60" DisplayMemberBinding="{Binding MODE_COD}" />
+                    <GridViewColumn Header="Station Number" Width="60" DisplayMemberBinding="{Binding STAT_NUM}" />
+                    <GridViewColumn Header="Sublot ID" Width="60" DisplayMemberBinding="{Binding SBLOT_ID}" />
+                    <GridViewColumn Header="Test Code" Width="60" DisplayMemberBinding="{Binding TEST_COD}" />
+                    <GridViewColumn Header="YIELD" Width="60" DisplayMemberBinding="{Binding YIELD}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Grid.Row="2" Text="{Binding Path=paramText}" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <ListView ItemsSource="{Binding PTRList}" Grid.Row="3" Name="ParamData" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Chip number" Width="100" DisplayMemberBinding="{Binding CHIPN}" />
+                    <GridViewColumn Header="Parameter" Width="60" DisplayMemberBinding="{Binding TEST_TXT}" />
+                    <GridViewColumn Header="LSL" Width="60" DisplayMemberBinding="{Binding LO_SPEC}" />
+                    <GridViewColumn Header="USL" Width="60" DisplayMemberBinding="{Binding HI_SPEC}" />
+                    <GridViewColumn Header="MEAN" Width="100" DisplayMemberBinding="{Binding MEAN}" />
+                    <GridViewColumn Header="STANDARD DEVIATION" Width="150" DisplayMemberBinding="{Binding STD_DEV}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

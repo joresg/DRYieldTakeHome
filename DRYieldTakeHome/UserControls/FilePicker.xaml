@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="DRYieldTakeHome.UserControls.FilePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DRYieldTakeHome.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1000">
+    <Grid Background="#404252">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Upload ADTF file</TextBlock>
+        <Rectangle  Grid.Row="1" Height="430" Width="560"
+                   Stroke="Black" StrokeThickness="2"
+                   AllowDrop="True"
+                   Drop="rect_Drop">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="C:\users\joresg\Desktop\file_upload1.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <!--<Path Grid.Row="1" Stretch="Uniform" Margin="0,-40,0,0" Fill="#2a84f1" Height="150" Width="150" Data="M11 16V7.85l-2.6 2.6L7 9l5-5l5 5l-1.4 1.45l-2.6-2.6V16Zm-7 4v-5h2v3h12v-3h2v5Z"/>-->
+        <Button Click="UploadFileButton_Click" Grid.Row="2" Width="100" Height="50" Content="Select a file" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+    </Grid>
+</UserControl>
